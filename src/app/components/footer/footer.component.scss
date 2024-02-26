@@ -5,6 +5,12 @@
   display: flex;
   justify-content: flex-end; 
   align-items: center; 
+  z-index: 99999;
+  width: 99%;
+  position: absolute;
+  left: 0px;   
+  bottom: 0px;
+
 }
 
 .powered-by {

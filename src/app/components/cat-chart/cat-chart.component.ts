@@ -1,59 +1,76 @@
 import { Component } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+import { CatAPIService } from '../../../services/cat-api.service';
 
+Chart.register(...registerables);
 @Component({
   selector: 'attribute-chart',
-  host: {
-    '[attr.extra-host-attribute]': 'true',
-  },
   templateUrl: './cat-chart.component.html',
   styleUrl: './cat-chart.component.scss',
 })
 export class CatChartComponent {
-  constructor() {}
+  constructor(private catAPIService: CatAPIService) {}
 
   ngOnInit(): void {
-    this.createChart();
+    this.catAPIService.getCatBreeds(1).subscribe((data: any[]) => {
+      const breedData = data[0];
+      this.breed = breedData.name;
+
+      const chartData = [
+        breedData.affection_level,
+        breedData.dog_friendly,
+        breedData.child_friendly,
+        breedData.stranger_friendly,
+        breedData.vocalisation,
+        breedData.intelligence
+      ];
+
+      this.createChart(chartData);
+    });
   }
   public chart: any;
+  public breed: string = '';
 
-  createChart(){
-  
-    this.chart = new Chart("MyChart", {
+  createChart(chartData: number[]) {
+    this.chart = new Chart('MyChart' as any, {
       type: 'radar',
       data: {
         labels: [
-          'Eating',
-          'Drinking',
-          'Sleeping',
-          'Designing',
-          'Coding',
-          'Cycling',
-          'Running'
-        ], 
-        datasets: [{
-          label: 'My First Dataset',
-          data: [65, 59, 90, 81, 56, 55, 40],
-          fill: true,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgb(255, 99, 132)',
-          pointBackgroundColor: 'rgb(255, 99, 132)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(255, 99, 132)'
-        }, {
-          label: 'My Second Dataset',
-          data: [28, 48, 40, 19, 96, 27, 100],
-          fill: true,
-          backgroundColor: 'rgba(54, 162, 235, 0.2)',
-          borderColor: 'rgb(54, 162, 235)',
-          pointBackgroundColor: 'rgb(54, 162, 235)',
-          pointBorderColor: '#fff',
-          pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgb(54, 162, 235)'
-        }]
+          'Overall Affection Level',
+          'Dog Friendly',
+          'Child Friendly',
+          'Stranger Friendly',
+          'Vocalisation',
+          'Intelligence',
+        ],
+        datasets: [
+          {
+            label: this.breed,
+            data: chartData,
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(255, 99, 132)',
+          },
+        ],
       },
-      options: { aspectRatio:2.5}
+      options: {
+        scales: {
+          r: {
+            angleLines: {
+              display: true,
+            },
+            beginAtZero: true,
+            min: 0,
+            max: 8
+          },
+        },
+        aspectRatio: 2.5,
+      },
+      
     });
   }
 }

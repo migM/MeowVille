@@ -1,7 +1,20 @@
 .cat-image {
-    width: 200px; 
-    height: 200px; 
-    background-size: cover;
-    background-position: center;
-    margin: 5px;
-  }
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin: 5px;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; 
+}
+
+.logo img {
+ width: 620px;
+ 
+  height: auto; 
+}
