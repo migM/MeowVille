@@ -7,19 +7,21 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CatCarouselComponent } from './components/cat-carousel/cat-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CatChartComponent } from './components/cat-chart/cat-chart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    CatCarouselComponent
+    CatCarouselComponent,
+    CatChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration()
