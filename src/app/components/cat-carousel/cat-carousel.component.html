@@ -1,0 +1,16 @@
+<!-- <c-carousel>
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let slide of slides" class="img-carousel">
+      <img
+        [src]="slide.src"
+        alt="{{slide.title}}"
+      />
+    </c-carousel-item>
+  </c-carousel-inner>
+</c-carousel> -->
+
+<div>
+  {{catBreeds}}
+</div>
+<div *ngFor="let imageUrl of catImages" class="cat-image" [style.background-image]="'url(' + imageUrl + ')'">
+</div>
