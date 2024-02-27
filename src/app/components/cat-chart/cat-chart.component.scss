@@ -3,9 +3,9 @@
 }
 
 .chart-container {
-    width: 750px;
-    height: 750px;
-    right: 0;
+    right: -162%;
     top: 210px;
     position: absolute;
+    border: 4px dotted rgb(255, 52, 69);
+    padding: 10px;
 }

@@ -1,28 +1,49 @@
 .example-card {
-    max-width: 400px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(214, 214, 214, 0.193);
+  left: 37vw;
+  position: absolute;
+}
+
+.image-description-container {
+  display: flex;
+//   width: 94vw;
+  justify-content: center;
+}
+
+.card-image {
+  max-height: 611px;
+  max-width: 400px;
+  width: auto;
+}
+
+.breed-name {
+  font-size: 75px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.breed-name,
+.description {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.description {
+  margin-top: 100px;
+}
+
+.division-line {
+  border-bottom: 1px solid #565555;
+  top: 2px;
+}
+
+.test {
+    width: 21vw;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    background-color: rgba(221, 221, 221, 0.54);
-  }
-  
-  .image-description-container {
-    display: flex;
-    width: 1323px;
-    justify-content: center;
-  }
-  
-  .card-image {
-    max-height: 511px;
-    max-width: 400px;
-    width: auto; 
-  }
-  
-  .breed-name, .description {
-    text-align: center; 
-    margin: 90px; 
-  }
-  
-  .division-line {
-    border-bottom: 1px solid #565555;
-    top: 2px
-  }
+}

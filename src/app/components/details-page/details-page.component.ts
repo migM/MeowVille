@@ -14,7 +14,8 @@ export class DetailsPageComponent {
     origin: '',
     wiki: '',
     image: '',
-    temperament: ''
+    temperament: '',
+    life_span: ''
   };
 
   ngOnInit(): void {
@@ -28,7 +29,8 @@ export class DetailsPageComponent {
         origin: breedData.origin,
         wiki: breedData.wikipedia_url,
         image: breedData.image.url,
-        temperament: breedData.temperament
+        temperament: breedData.temperament,
+        life_span: breedData.life_span
       };
     });
   }
