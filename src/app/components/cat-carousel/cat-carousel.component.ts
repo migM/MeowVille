@@ -15,7 +15,7 @@ export class CatCarouselComponent {
     this.getCatsForSpinner(50, 5);
   }
 
-  //load cats for spinner randomly
+  //load cats for spinner randomly by getting a number of cats provided in the limit argument, and presents the number of entries with the latter argument
   getCatsForSpinner(limit: number, numberOfEntries: number): void {
     this.catAPIService.getCats(limit).subscribe((data: any[]) => {
       // Get a random index

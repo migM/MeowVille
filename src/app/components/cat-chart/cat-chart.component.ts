@@ -32,6 +32,7 @@ export class CatChartComponent {
     });
   }
 
+  //builds chart to show cat stats provided in labels
   createChart(chartData: number[]) {
     this.chart = new Chart('MyChart' as any, {
       type: 'radar',

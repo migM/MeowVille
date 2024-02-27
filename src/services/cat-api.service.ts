@@ -12,16 +12,19 @@ export class CatAPIService {
 
   constructor(private http: HttpClient) { }
   
+  //gets random cats
   getCats(limit: number): Observable<any> {  
     return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
 
   }
 
-  getCatImages(limit: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/images/search?limit=${limit}&api_key=${this.apiKey}`);
-  }
+  //gets random images of cats
+  // getCatImages(limit: number): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/images/search?limit=${limit}&api_key=${this.apiKey}`);
+  // }
 
-  getCatBreeds(limit: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
-  }
+  //gets breeds of cats
+  // getCatBreeds(limit: number): Observable<any> {
+  //   return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
+  // }
 }
