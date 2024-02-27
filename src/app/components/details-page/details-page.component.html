@@ -1,1 +1,30 @@
-<p>details-page works!</p>
+<!-- <div>{{this.details.description}}</div>
+<div>{{this.details.origin}}</div>
+<div>{{this.details.weight}}</div>
+<div>{{this.details.wiki}}</div>
+ -->
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{this.details.name}}</mat-card-title>
+      <mat-card-subtitle>{{this.details.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="card-image" mat-card-image src="{{this.details.image}}" alt="Photo of dog">
+    <mat-card-content>
+      <p>
+        {{this.details.description}}
+      </p>
+      <p>
+        <b>Origin:</b> {{this.details.origin}}
+      </p>
+      <p>
+        <b>Average weight:</b> {{this.details.weight}}
+      </p>
+
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+    
+</mat-card>
+<attribute-chart></attribute-chart>

@@ -7,7 +7,6 @@ import { CatAPIService } from '../../../services/cat-api.service';
   styleUrl: './cat-carousel.component.scss',
 })
 export class CatCarouselComponent {
-  // slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
 
   public catImages: any[] | undefined;
   public catBreeds: any[] | undefined;
@@ -15,13 +14,14 @@ export class CatCarouselComponent {
   constructor(private catService: CatAPIService) {}
 
   ngOnInit(): void {
-    this.getCatImages(5);
-    this.getCatBreeds(5);
+    this.getCatImages(1);
+    this.getCatBreeds(1);
   }
 
   getCatImages(limit: number): void {
     this.catService.getCats(limit).subscribe((data: any[]) => {
       this.catImages = data.map((cat: any) => cat.image.url);
+      console.log(data)
     });
   }
 

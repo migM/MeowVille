@@ -11,6 +11,9 @@ Chart.register(...registerables);
 export class CatChartComponent {
   constructor(private catAPIService: CatAPIService) {}
 
+  public chart: any;
+  public breed: string = '';
+  
   ngOnInit(): void {
     this.catAPIService.getCats(1).subscribe((data: any[]) => {
       const breedData = data[0];
@@ -28,8 +31,6 @@ export class CatChartComponent {
       this.createChart(chartData);
     });
   }
-  public chart: any;
-  public breed: string = '';
 
   createChart(chartData: number[]) {
     this.chart = new Chart('MyChart' as any, {
