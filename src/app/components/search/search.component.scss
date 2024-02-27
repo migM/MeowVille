@@ -66,3 +66,12 @@ button:hover {
   padding-bottom: 30px;
   padding-top: 10px;
 }
+
+.no-results {
+  font-size: 1.25rem !important;
+  color: $lightpink;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

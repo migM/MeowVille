@@ -3,3 +3,6 @@
   <button (click)="search(searchQuery)">Search</button>
 </div>
 
+<div class="no-results" *ngIf="noResults">
+  <i> Oops! No results... </i>
+</div>

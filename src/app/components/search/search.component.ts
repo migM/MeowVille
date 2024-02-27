@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  searchQuery: string = '';
-  searchResults: any[] = [];
+  public searchQuery: string = '';
+  public searchResults: any[] = [];
+  public noResults: boolean = false;
 
   constructor(private catAPIService: CatAPIService,
     private router: Router,
@@ -21,11 +22,15 @@ export class SearchComponent {
     this.searchQuery = searchQuery;
     if (this.searchQuery.trim() !== '') {
       this.catAPIService.getCatByName(searchQuery).subscribe((data: any[]) => {
-        this.searchResults = data.filter((cat) =>
-          cat.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-        );
-        this.searchService.setSearchResults(this.searchResults);
-        this.router.navigate(['/results'], { state: { searchResults: this.searchResults } });
+        if (data.length === 0) {
+          this.noResults = true;
+        } else {
+          this.searchResults = data.filter((cat) =>
+            cat.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+          );
+          this.searchService.setSearchResults(this.searchResults);
+          this.router.navigate(['/results'], { state: { searchResults: this.searchResults } });
+        }
       });
     }
   }
