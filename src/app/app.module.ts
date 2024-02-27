@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CatCarouselComponent } from './components/cat-carousel/cat-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CatChartComponent } from './components/cat-chart/cat-chart.component';
+import { DetailsPageComponent } from './components/details-page/details-page.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CatChartComponent } from './components/cat-chart/cat-chart.component';
     AppComponent,
     FooterComponent,
     CatCarouselComponent,
-    CatChartComponent
+    CatChartComponent,
+    DetailsPageComponent
   ],
   imports: [
     BrowserModule,
