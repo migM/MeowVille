@@ -7,23 +7,28 @@ import { CatAPIService } from '../../../services/cat-api.service';
   styleUrl: './cat-carousel.component.scss',
 })
 export class CatCarouselComponent {
-
-  public details: { name: string, description: string, image: string }[] = [];
+  public details: { name: string; description: string; image: string }[] = [];
 
   constructor(private catAPIService: CatAPIService) {}
 
   ngOnInit(): void {
-    this.getCatsForSpinner(4)
+    this.getCatsForSpinner(50, 5);
   }
 
-  getCatsForSpinner(limit: number): void {
+  //load cats for spinner randomly
+  getCatsForSpinner(limit: number, numberOfEntries: number): void {
     this.catAPIService.getCats(limit).subscribe((data: any[]) => {
-      this.details = data.map((breedData: any) => ({
-        name: breedData.name,
-        description: breedData.description,
-        image: breedData.image.url
-      }));
+      // Get a random index
+      for (let i = 0; i < numberOfEntries; i++) {
+        const randomIndex = Math.floor(Math.random() * data.length);
+        // Get a random entry from the data array
+        const randomEntry = data[randomIndex];
+        this.details.push({
+          name: randomEntry.name,
+          description: randomEntry.description,
+          image: randomEntry.image.url,
+        });
+      }
     });
   }
-
 }
