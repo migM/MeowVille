@@ -34,7 +34,6 @@ export class CatChartComponent {
           breedData.vocalisation,
           breedData.intelligence,
         ];
-        debugger;
         this.createChart(chartData);
       });
     }
