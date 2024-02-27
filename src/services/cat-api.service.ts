@@ -11,13 +11,9 @@ export class CatAPIService {
   private apiUrl = 'https://api.thecatapi.com/v1';
 
   constructor(private http: HttpClient) { }
-
-  getCatImages(limit: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/images/search?limit=${limit}&api_key=${this.apiKey}`);
-  }
-
-  getCatBreeds(limit: number): Observable<any> {
+  
+  getCats(limit: number): Observable<any> {  
     return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
-  }
 
+  }
 }

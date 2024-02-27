@@ -12,7 +12,7 @@ export class CatChartComponent {
   constructor(private catAPIService: CatAPIService) {}
 
   ngOnInit(): void {
-    this.catAPIService.getCatBreeds(1).subscribe((data: any[]) => {
+    this.catAPIService.getCats(1).subscribe((data: any[]) => {
       const breedData = data[0];
       this.breed = breedData.name;
 
