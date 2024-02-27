@@ -13,6 +13,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from '@coreui/angular';
 import { HomeComponent } from './components/home/home.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './components/home/home.component';
     CatChartComponent,
     DetailsPageComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
