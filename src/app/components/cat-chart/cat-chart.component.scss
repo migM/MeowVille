@@ -1,17 +1,16 @@
-
-@import '../../../shared-styles.scss';
+@import "../../../shared-styles.scss";
 
 #MyChart {
-    display:block;
-    width: 300px;
-    height: 300px;
+  display: block;
+  width: 300px;
+  height: 300px;
 }
 
 .chart-container {
-    right: -162%;
-    top: 6vw;
-    right: -31vw;
-    width: 411px;
-    height: 411px;
-    position: absolute;
+  right: -162%;
+  top: 1vw;
+  right: -31vw;
+  width: 411px;
+  height: 411px;
+  position: absolute;
 }
