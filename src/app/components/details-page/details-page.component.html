@@ -1,30 +1,39 @@
-<!-- <div>{{this.details.description}}</div>
-<div>{{this.details.origin}}</div>
-<div>{{this.details.weight}}</div>
-<div>{{this.details.wiki}}</div>
- -->
-
 <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{this.details.name}}</mat-card-title>
-      <mat-card-subtitle>{{this.details.name}}</mat-card-subtitle>
-    </mat-card-header>
-    <img class="card-image" mat-card-image src="{{this.details.image}}" alt="Photo of dog">
-    <mat-card-content>
-      <p>
-        {{this.details.description}}
-      </p>
-      <p>
-        <b>Origin:</b> {{this.details.origin}}
-      </p>
-      <p>
-        <b>Average weight:</b> {{this.details.weight}}
-      </p>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
 
-      <attribute-chart></attribute-chart>
-    </mat-card-content>
-    <mat-card-actions>
-    </mat-card-actions>
-    
+    <!-- <mat-card-subtitle>{{ details.name }}</mat-card-subtitle> -->
+  </mat-card-header>
+  <div class="image-description-container">
+    <img
+      class="card-image"
+      mat-card-image
+      src="{{ details.image }}"
+      alt="Breed photo"
+    />
+    <mat-card-title>
+      <h1 class="breed-name">
+        {{ details.name }}
+      </h1>
+      <h3 class="description">
+        {{ details.description }} This cat's temperament is usually described as: {{details.temperament}}
+      </h3>
+    </mat-card-title>
+  </div>
+  <mat-card-content>
+    <p class="division-line">
+      <b>Origin:</b> <i> {{ details.origin }}</i>
+    </p>
+    <p class="division-line">
+      <b>Average weight:</b> <i> {{ details.weight }} kg</i>
+    </p>
+    <p class="division-line">
+        <b>Wikipedia: </b>
+        <a href="{{ details.wiki }}" target="_blank" rel="noopener noreferrer">
+          <i>{{ details.wiki }}</i>
+        </a>
+      </p>
+    <attribute-chart></attribute-chart>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
 </mat-card>

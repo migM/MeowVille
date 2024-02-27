@@ -13,22 +13,23 @@ export class DetailsPageComponent {
     weight: '',
     origin: '',
     wiki: '',
-    image: ''
+    image: '',
+    temperament: ''
   };
 
   ngOnInit(): void {
     this.catAPIService.getCats(1).subscribe((data: any[]) => {
       const breedData = data[0];
+      // debugger;
       this.details = {
-        name: breedData.breed,
+        name: breedData.name,
         description: breedData.description,
         weight: breedData.weight.metric,
         origin: breedData.origin,
-        wiki: breedData.wiki,
-        image: breedData.image.url
+        wiki: breedData.wikipedia_url,
+        image: breedData.image.url,
+        temperament: breedData.temperament
       };
-
-      console.log(this.details);
     });
   }
 
