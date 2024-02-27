@@ -9,6 +9,8 @@ import { CatCarouselComponent } from './components/cat-carousel/cat-carousel.com
 import { HttpClientModule } from '@angular/common/http';
 import { CatChartComponent } from './components/cat-chart/cat-chart.component';
 import { DetailsPageComponent } from './components/details-page/details-page.component';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { DetailsPageComponent } from './components/details-page/details-page.com
     FooterComponent,
     CatCarouselComponent,
     CatChartComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
