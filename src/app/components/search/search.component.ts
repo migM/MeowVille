@@ -12,11 +12,14 @@ export class SearchComponent {
 
   constructor(private catAPIService: CatAPIService) { }
 
-  search() {
+  search(searchQuery: string) {
+    this.searchQuery = searchQuery;
     if (this.searchQuery.trim() !== '') {
-      this.catAPIService.getCats(10)
+      this.catAPIService.getCatByName(searchQuery)
         .subscribe((data: any[]) => {
           this.searchResults = data.filter(cat => cat.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+          console.log(data);
+          debugger;
         });
     }
   }

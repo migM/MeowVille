@@ -5,7 +5,7 @@
         <div class="cat-statement">
           <p class="cat-statement-breed">"{{cat.name}}"</p>
           <p class="cat-statement-description">- {{cat.description}}</p>
-          <button class="cat-button">Learn More >></button>
+          <button class="cat-button" (click)="seeCatDetails(cat.name)">Learn More >></button>
         </div>
         <div class="cat-image" [style.backgroundImage]="'url(' + cat.image + ')'"></div>
       </div>

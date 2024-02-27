@@ -18,6 +18,11 @@ export class CatAPIService {
 
   }
 
+    // Get cat data by name
+    getCatByName(name: string): Observable<any> {  
+      return this.http.get(`${this.apiUrl}/breeds/search?q=${name}&api_key=${this.apiKey}`);
+    }
+
   //gets random images of cats
   // getCatImages(limit: number): Observable<any> {
   //   return this.http.get(`${this.apiUrl}/images/search?limit=${limit}&api_key=${this.apiKey}`);

@@ -8,7 +8,7 @@ import { CatAPIService } from '../../../services/cat-api.service';
 })
 export class CatCarouselComponent {
   public details: { name: string; description: string; image: string }[] = [];
-
+  public selectedCat: any;
   constructor(private catAPIService: CatAPIService) {}
 
   ngOnInit(): void {
@@ -34,6 +34,17 @@ export class CatCarouselComponent {
         }
       }
     });
+  }
+
+  seeCatDetails(catName: string){
+    if (catName.trim() !== '') {
+      this.catAPIService.getCatByName(catName)
+        .subscribe((data: any[]) => {
+          this.selectedCat = data.filter(cat => cat.name.toLowerCase().includes(catName.toLowerCase()));
+          //WIP: transmit this data show up on details page
+          console.log(data);
+        });
+    }
   }
   
 }
