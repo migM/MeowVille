@@ -1,25 +1,43 @@
+@import "../../../shared-styles.scss";
+
 .search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 130px;
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: rgb(255, 91, 104);
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color:  rgb(255, 52, 69);
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 130px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: $lightpink;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $darkpink;
+}
+
+.card-grid {
+  max-width: 400px;
+  @extend .outline;
+}
+
+.card-header {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.text-cutoff {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

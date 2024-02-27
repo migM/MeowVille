@@ -19,7 +19,7 @@ export class SearchComponent {
         .subscribe((data: any[]) => {
           this.searchResults = data.filter(cat => cat.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
           console.log(data);
-          debugger;
+          // debugger;
         });
     }
   }
