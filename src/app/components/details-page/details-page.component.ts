@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DetailsPageComponent {
 
+  public description : string = '';
+  public weight : any;
+  public origin: string = '';
+  public breed: string = '';
+
 }
