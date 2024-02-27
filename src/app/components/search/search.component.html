@@ -3,11 +3,17 @@
   <button (click)="search(searchQuery)">Search</button>
 </div>
 <div *ngIf="searchQuery.trim() !== ''">
-  <mat-grid-list class="horizontal-display"cols="auto-fit" rowHeight="auto" gutterSize="16px">
+  <mat-grid-list
+    class="horizontal-display"
+    cols="auto-fit"
+    rowHeight="auto"
+    gutterSize="16px"
+  >
     <mat-grid-tile class="card-grid" *ngFor="let cat of searchResults">
-      <mat-card >
+      <mat-card>
         <mat-card-header class="header">
-          <img class="cat-image"
+          <img
+            class="cat-image"
             mat-card-image
             [src]="cat.image.url"
             alt="Cat Image"
@@ -18,7 +24,9 @@
                 ><b>{{ cat.name }}</b></mat-card-title
               >
             </div>
-            <mat-card-subtitle class="text-cutoff ">{{ cat.description }}</mat-card-subtitle>
+            <mat-card-subtitle class="text-cutoff">{{
+              cat.description
+            }}</mat-card-subtitle>
           </div>
         </mat-card-header>
         <mat-card-actions class="mat-card">
