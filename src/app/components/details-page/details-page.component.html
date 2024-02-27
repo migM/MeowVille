@@ -1,14 +1,13 @@
-
 <div class="title-container">
-    <mat-card-title>
-        <h1 class="breed-name">
-          {{ details.name }}
-        </h1>
-        <h3 >
-          {{ details.description }} This cat's temperament is usually described
-          as: {{ details.temperament }}
-        </h3>
-      </mat-card-title>
+  <mat-card-title>
+    <h1 class="breed-name">
+      {{ details.name }}
+    </h1>
+    <h3>
+      {{ details.description }} This cat's temperament is usually described as:
+      {{ details.temperament }}
+    </h3>
+  </mat-card-title>
 </div>
 
 <mat-card class="example-card">
@@ -16,12 +15,7 @@
     <div mat-card-avatar class="example-header-image"></div>
   </mat-card-header>
   <div class="image-description-container">
-    <img
-      class="card-image"
-      mat-card-image
-      [src]="details.image"
-    />
-
+    <img class="card-image" mat-card-image [src]="details.image" />
   </div>
   <mat-card-content class="info-card">
     <p class="division-line">

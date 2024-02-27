@@ -12,9 +12,11 @@ export class CatCarouselComponent {
   public details: { name: string; description: string; image: string }[] = [];
   public selectedCat: any;
 
-  constructor(private catAPIService: CatAPIService,
+  constructor(
+    private catAPIService: CatAPIService,
     private router: Router,
-    private catNameService: CatNameServiceService) {}
+    private catNameService: CatNameServiceService
+  ) {}
 
   ngOnInit(): void {
     this.getCatsForSpinner(50, 5);
@@ -27,9 +29,14 @@ export class CatCarouselComponent {
       while (entriesAdded < numberOfEntries) {
         const randomIndex = Math.floor(Math.random() * data.length);
         const randomEntry = data[randomIndex];
-        
+
         // Check if the required fields are present in the random entry
-        if (randomEntry.name && randomEntry.description && randomEntry.image && randomEntry.image.url) {
+        if (
+          randomEntry.name &&
+          randomEntry.description &&
+          randomEntry.image &&
+          randomEntry.image.url
+        ) {
           this.details.push({
             name: randomEntry.name,
             description: randomEntry.description,
@@ -40,10 +47,11 @@ export class CatCarouselComponent {
       }
     });
   }
-
+  
+  //opens details page with relevant cat selected
   seeCatDetails(catName: string): void {
     if (catName.trim() !== '') {
-      this.catNameService.setCatName(catName); 
+      this.catNameService.setCatName(catName);
       this.router.navigate(['/details']);
     }
   }

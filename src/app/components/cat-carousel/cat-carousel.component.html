@@ -3,14 +3,17 @@
     <c-carousel-item *ngFor="let cat of details" class="d-block">
       <div class="carousel-item-container">
         <div class="cat-statement">
-          <p class="cat-statement-breed">"{{cat.name}}"</p>
-          <p class="cat-statement-description">- {{cat.description}}</p>
-          <button class="cat-button" (click)="seeCatDetails(cat.name)">Learn More >></button>
+          <p class="cat-statement-breed">"{{ cat.name }}"</p>
+          <p class="cat-statement-description">- {{ cat.description }}</p>
+          <button class="cat-button" (click)="seeCatDetails(cat.name)">
+            Learn More >>
+          </button>
         </div>
-        <div class="cat-image" [style.backgroundImage]="'url(' + cat.image + ')'"></div>
+        <div
+          class="cat-image"
+          [style.backgroundImage]="'url(' + cat.image + ')'"
+        ></div>
       </div>
     </c-carousel-item>
   </c-carousel-inner>
 </c-carousel>
-
-
