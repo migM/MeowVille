@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CatAPIService } from '../../../services/cat-api.service';
+import { Router } from '@angular/router';
+import { CatNameServiceService } from '../../../services/cat-name-service.service';
 
 @Component({
   selector: 'app-cat-carousel',
@@ -9,7 +11,10 @@ import { CatAPIService } from '../../../services/cat-api.service';
 export class CatCarouselComponent {
   public details: { name: string; description: string; image: string }[] = [];
   public selectedCat: any;
-  constructor(private catAPIService: CatAPIService) {}
+
+  constructor(private catAPIService: CatAPIService,
+    private router: Router,
+    private catNameService: CatNameServiceService) {}
 
   ngOnInit(): void {
     this.getCatsForSpinner(50, 5);
@@ -36,15 +41,10 @@ export class CatCarouselComponent {
     });
   }
 
-  seeCatDetails(catName: string){
+  seeCatDetails(catName: string): void {
     if (catName.trim() !== '') {
-      this.catAPIService.getCatByName(catName)
-        .subscribe((data: any[]) => {
-          this.selectedCat = data.filter(cat => cat.name.toLowerCase().includes(catName.toLowerCase()));
-          //WIP: transmit this data show up on details page
-          console.log(data);
-        });
+      this.catNameService.setCatName(catName); 
+      this.router.navigate(['/details']);
     }
   }
-  
 }
