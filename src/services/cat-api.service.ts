@@ -16,4 +16,12 @@ export class CatAPIService {
     return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
 
   }
+
+  getCatImages(limit: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/images/search?limit=${limit}&api_key=${this.apiKey}`);
+  }
+
+  getCatBreeds(limit: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/breeds?limit=${limit}&api_key=${this.apiKey}`);
+  }
 }

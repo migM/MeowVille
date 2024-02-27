@@ -1,8 +1,13 @@
-
-<div>
-  <!-- <div>
-    {{catBreeds}}
-  </div> -->
-  <!-- <div *ngFor="let imageUrl of catImages" class="cat-image" [style.background-image]="'url(' + imageUrl + ')'">
-  </div> -->
-</div>
+<c-carousel [interval]="3000" transition="slide" class="carousel-container">
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let cat of catCarouselItems" class="d-block">
+      <div class="carousel-item-container">
+        <div class="cat-statement">
+          <p class="cat-statement-description">"{{cat.statement.description}}"</p>
+          <p class="cat-statement-author">- {{cat.statement.author}}</p>
+        </div>
+        <div class="cat-image" [style.backgroundImage]="'url(' + cat.src + ')'"></div>
+      </div>
+    </c-carousel-item>
+  </c-carousel-inner>
+</c-carousel>

@@ -11,6 +11,7 @@ import { CatChartComponent } from './components/cat-chart/cat-chart.component';
 import { DetailsPageComponent } from './components/details-page/details-page.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { CarouselModule } from '@coreui/angular';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ],
   providers: [
     provideClientHydration()

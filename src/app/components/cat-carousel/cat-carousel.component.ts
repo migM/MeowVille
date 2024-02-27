@@ -4,30 +4,35 @@ import { CatAPIService } from '../../../services/cat-api.service';
 @Component({
   selector: 'app-cat-carousel',
   templateUrl: './cat-carousel.component.html',
-  styleUrl: './cat-carousel.component.scss',
+  styleUrl: './cat-carousel.component.scss'
 })
 export class CatCarouselComponent {
+  // slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
 
-  public catImages: any[] | undefined;
-  public catBreeds: any[] | undefined;
+  public catCarouselItems : any[] | undefined;
+  private catStatements = [
+    { description: 'Purrrfect!',
+      author: 'The New Yarn Times' },
+      { description: 'PAW-Tastic!',
+      author: 'Vanity Fur' },
+      { description: 'Furreal!',
+      author: 'Cosmopawlitan' },
+      { description: 'Pawsitively delightful.',
+      author: 'Meow Yorker' },
+      { description: 'Meowvelous',
+      author: 'Cat Digest' }
+  ]
 
-  constructor(private catService: CatAPIService) {}
+  constructor(private catService: CatAPIService) { }
 
   ngOnInit(): void {
-    this.getCatImages(1);
-    this.getCatBreeds(1);
+    this.getCatImages(5);
   }
 
   getCatImages(limit: number): void {
-    this.catService.getCats(limit).subscribe((data: any[]) => {
-      this.catImages = data.map((cat: any) => cat.image.url);
-      console.log(data)
-    });
-  }
-
-  getCatBreeds(limit: number): void {
-    this.catService.getCats(limit).subscribe((data) => {
-      this.catBreeds = data.map((breed: { name: string }) => breed.name);
+    this.catService.getCatImages(limit).subscribe(data => {
+      this.catCarouselItems = data.map((cat: { url: string }, index: number ) => {
+        return {src: cat.url, statement: this.catStatements[index]}});
     });
   }
 }
