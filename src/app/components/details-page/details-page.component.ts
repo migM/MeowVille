@@ -21,7 +21,6 @@ export class DetailsPageComponent {
   ngOnInit(): void {
     this.catAPIService.getCats(1).subscribe((data: any[]) => {
       const breedData = data[0];
-      // debugger;
       this.details = {
         name: breedData.name,
         description: breedData.description,

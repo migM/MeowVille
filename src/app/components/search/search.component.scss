@@ -26,7 +26,8 @@ button:hover {
 }
 
 .card-grid {
-  max-width: 400px;
+  max-width: 365px;
+  margin-right: 10px;
   @extend .outline;
 }
 
@@ -40,4 +41,21 @@ button:hover {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.horizontal-display {
+  display: flex;
+}
+
+.cat-image {
+  flex: 1;
+  width: 335px;
+  max-height: 300px;
+  height: 60%;
+
+  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
