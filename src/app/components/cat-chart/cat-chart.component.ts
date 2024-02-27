@@ -74,7 +74,7 @@ export class CatChartComponent {
             },
             beginAtZero: true,
             min: 0,
-            max: 8,
+            max: 6,
           },
         },
         aspectRatio: 1,
