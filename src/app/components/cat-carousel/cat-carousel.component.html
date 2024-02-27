@@ -1,13 +1,17 @@
-<c-carousel [interval]="3000" transition="slide" class="carousel-container">
+<c-carousel [interval]="6000" transition="slide" class="carousel-container">
   <c-carousel-inner>
-    <c-carousel-item *ngFor="let cat of catCarouselItems" class="d-block">
+    <c-carousel-item *ngFor="let cat of details" class="d-block">
       <div class="carousel-item-container">
         <div class="cat-statement">
-          <p class="cat-statement-description">"{{cat.statement.description}}"</p>
-          <p class="cat-statement-author">- {{cat.statement.author}}</p>
+          <p class="cat-statement-breed">"{{cat.name}}"</p>
+          <p class="cat-statement-description">- {{cat.description}}</p>
+          <button class="cat-button">Learn More >></button>
         </div>
-        <div class="cat-image" [style.backgroundImage]="'url(' + cat.src + ')'"></div>
+        <div class="cat-image" [style.backgroundImage]="'url(' + cat.image + ')'"></div>
+        <!-- <button class="cat-button">Learn More >></button> -->
       </div>
     </c-carousel-item>
   </c-carousel-inner>
 </c-carousel>
+
+

@@ -1,4 +1,8 @@
+@import "./styles.scss";
+
 .outline {
-  border: 4px dotted rgb(255, 52, 69);
+  border: 4px dotted $darkpink;
   padding: 10px;
 }
+
+
