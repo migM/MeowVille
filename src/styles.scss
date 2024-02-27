@@ -2,7 +2,12 @@ body {
     background-color: #fff4f6;
   }
 
-.logo img {
-  width: 520px;
-  height: auto;
-}
+  .logo {
+    display: flex; 
+    justify-content: center; 
+  }
+  
+  .logo img {
+    width: 520px;
+    height: auto;
+  }

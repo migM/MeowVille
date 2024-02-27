@@ -1,4 +1,7 @@
+@import '../../../shared-styles.scss';
+
 .example-card {
+  @extend .outline;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -9,7 +12,6 @@
 
 .image-description-container {
   display: flex;
-//   width: 94vw;
   justify-content: center;
 }
 
@@ -42,8 +44,8 @@
 }
 
 .test {
-    width: 21vw;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+  width: 21vw;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }

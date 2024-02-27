@@ -46,7 +46,7 @@ export class CatChartComponent {
         ],
         datasets: [
           {
-            label: this.breed,
+            label: 'Personality',
             data: chartData,
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
