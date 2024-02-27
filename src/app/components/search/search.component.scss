@@ -28,6 +28,8 @@ button:hover {
 .card-grid {
   max-width: 365px;
   margin-right: 10px;
+  min-height: 530px;
+
   @extend .outline;
 }
 
