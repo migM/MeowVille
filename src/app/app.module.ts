@@ -12,6 +12,7 @@ import { DetailsPageComponent } from './components/details-page/details-page.com
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from '@coreui/angular';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CarouselModule } from '@coreui/angular';
     CatCarouselComponent,
     CatChartComponent,
     DetailsPageComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { CarouselModule } from '@coreui/angular';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
   ],
   providers: [
     provideClientHydration()

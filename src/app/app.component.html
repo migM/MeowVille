@@ -1,10 +1,11 @@
-<main class="main">
-  <div class="logo">
-    <img src="assets/Images/Meowville.png" alt="Meowville Logo" />
+<div class="app-meowville">
+  <header class="app-header-container">
+    <img class="header-img" src="assets/Images/Meowville.png" alt="Meowville Logo" />
+  </header>
+  <main class="content-container">
+    <router-outlet />
+  </main>
+  <div class="app-footer-container">
+    <app-footer></app-footer>
   </div>
-  <app-search></app-search>
-  <!-- <app-details-page></app-details-page> -->
-  <!-- <app-cat-carousel></app-cat-carousel> -->
-</main>
-<app-footer></app-footer>
-<router-outlet />
+</div>

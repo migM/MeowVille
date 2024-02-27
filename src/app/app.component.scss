@@ -1,5 +1,34 @@
-.main {
-    overflow: auto;
-    width: 100vw;
-    height: calc(100vh - 44px);
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-meowville {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-header-container {
+  flex: 0 0 auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 34px;
+  margin-bottom: 34px;
+}
+
+.header-img {
+  max-width: 33%;
+  height: auto;
+}
+
+.content-container {
+  flex: 1; 
+  overflow-y: auto;
+  margin: 0;
+}
+
+.app-footer-container {
+  flex: 0 0 auto; 
+}
