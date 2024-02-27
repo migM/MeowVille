@@ -18,14 +18,11 @@ export class CatCarouselComponent {
   //load cats for spinner randomly by getting a number of cats provided in the limit argument, and presents the number of entries with the latter argument
   getCatsForSpinner(limit: number, numberOfEntries: number): void {
     this.catAPIService.getCats(limit).subscribe((data: any[]) => {
-      // for the event of getting an entry without the required properties, we count the entries so we can add another one in case of error
       let entriesAdded = 0;
-      // Get a random index
-      for (let i = 0; i < numberOfEntries; i++) {
+      while (entriesAdded < numberOfEntries) {
         const randomIndex = Math.floor(Math.random() * data.length);
-        // Get a random entry from the data array
         const randomEntry = data[randomIndex];
-
+        
         // Check if the required fields are present in the random entry
         if (randomEntry.name && randomEntry.description && randomEntry.image && randomEntry.image.url) {
           this.details.push({
@@ -35,12 +32,8 @@ export class CatCarouselComponent {
           });
           entriesAdded++;
         }
-        this.details.push({
-          name: randomEntry.name,
-          description: randomEntry.description,
-          image: randomEntry.image.url,
-        });
       }
     });
   }
+  
 }
