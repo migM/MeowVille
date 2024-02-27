@@ -57,3 +57,15 @@
   display: flex;
   flex-direction: column;
 }
+
+button {
+  padding: 10px 20px;
+  background-color: $lightpink;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: $darkpink;
+}

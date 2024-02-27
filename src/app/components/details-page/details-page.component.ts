@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { CatNameServiceService } from '../../../services/cat-name-service.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details-page',
@@ -21,7 +22,8 @@ export class DetailsPageComponent {
 
   constructor(
     private catAPIService: CatAPIService,
-    private catNameService: CatNameServiceService
+    private catNameService: CatNameServiceService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -41,5 +43,9 @@ export class DetailsPageComponent {
         };
       });
     }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
