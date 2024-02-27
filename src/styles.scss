@@ -1,13 +1,16 @@
 body {
-    background-color: #fff4f6;
-  }
+  background-color: #fff4f6;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  .logo {
-    display: flex; 
-    justify-content: center; 
-  }
-  
-  .logo img {
-    width: 520px;
-    height: auto;
-  }
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: 520px;
+  height: auto;
+}

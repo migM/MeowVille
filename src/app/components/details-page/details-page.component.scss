@@ -1,4 +1,4 @@
-@import '../../../shared-styles.scss';
+@import "../../../shared-styles.scss";
 
 .example-card {
   @extend .outline;
@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(214, 214, 214, 0.193);
-  left: 37vw;
+  left: 40vw;
   position: absolute;
 }
 
@@ -34,8 +34,15 @@
   padding-left: 30px;
 }
 
-.description {
-  margin-top: 100px;
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+  max-width: 25%;
+  top: 34%;
+  position: absolute;
+  left: 6vw;
 }
 
 .division-line {
@@ -43,8 +50,9 @@
   top: 2px;
 }
 
-.test {
-  width: 21vw;
+.info-card {
+  max-width: 21vw;
+  max-height: 21vh;
   justify-content: center;
   display: flex;
   flex-direction: column;
