@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CatAPIService } from './cat-api.service';
 import { Router } from '@angular/router';
+import { Observable, of, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,23 +11,35 @@ export class SearchService {
 
   constructor(private catAPIService: CatAPIService, private router: Router) {}
 
-  search(searchQuery: string) {
+  search(searchQuery: string): Observable<any[]> {
+    // Check if searchQuery is not empty
     if (searchQuery.trim() !== '') {
-      this.catAPIService.getCatByName(searchQuery).subscribe((data: any[]) => {
-        if (data.length === 0) {
-          // Handle case where no results are found
-          this.router.navigate(['/no-results']);
-        } else {
-          this.searchResults = data.filter(cat =>
-            cat.name.toLowerCase().includes(searchQuery.toLowerCase())
-          );
-          if(this.searchResults.length === 0) {
-            this.router.navigate(['']);
+      // Use switchMap to chain the HTTP request and the subsequent logic
+      return this.catAPIService.getCatByName(searchQuery).pipe(
+        switchMap((data: any[]) => {
+          if (data.length === 0) {
+            // Handle case where no results are found
+            this.router.navigate(['/no-results']);
+            // Return an empty array if no results are found
+            return of([]);
+          } else {
+            this.searchResults = data.filter(cat =>
+              cat.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            if (this.searchResults.length === 0) {
+              this.router.navigate(['']);
+            }
+            // Set search results and navigate to the results page
+            this.setSearchResults(this.searchResults);
+            this.router.navigate(['/results']);
+            // Return the search results
+            return of(this.searchResults);
           }
-          this.setSearchResults(this.searchResults);
-          this.router.navigate(['/results']);
-        }
-      });
+        })
+      );
+    } else {
+      // Return an empty array if searchQuery is empty
+      return of([]);
     }
   }
 

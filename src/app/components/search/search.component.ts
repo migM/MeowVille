@@ -13,6 +13,8 @@ export class SearchComponent {
   constructor(private searchService: SearchService) {}
 
   search(searchQuery: string) {
-    this.searchService.search(searchQuery);
+    this.searchService.search(searchQuery).subscribe((results: any[]) => {
+      this.noResults = results.length === 0;
+    });
   }
 }
