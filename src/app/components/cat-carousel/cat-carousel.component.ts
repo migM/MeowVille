@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { Router } from '@angular/router';
 import { CatNameService } from '../../../services/cat-name-service.service';
@@ -8,7 +8,7 @@ import { CatNameService } from '../../../services/cat-name-service.service';
   templateUrl: './cat-carousel.component.html',
   styleUrl: './cat-carousel.component.scss',
 })
-export class CatCarouselComponent {
+export class CatCarouselComponent implements OnInit {
   public details: { name: string; description: string; image: string }[] = [];
   public selectedCat: any;
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { CatNameService } from '../../../services/cat-name-service.service';
@@ -11,7 +11,7 @@ Chart.register(...registerables);
   templateUrl: './cat-chart.component.html',
   styleUrl: './cat-chart.component.scss',
 })
-export class CatChartComponent {
+export class CatChartComponent implements OnInit {
   constructor(
     private catAPIService: CatAPIService,
     private catNameService: CatNameService,

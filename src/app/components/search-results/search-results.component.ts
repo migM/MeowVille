@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../../services/search-service.service';
 import { Router } from '@angular/router';
 import { CatNameService } from '../../../services/cat-name-service.service';
@@ -8,7 +8,7 @@ import { CatNameService } from '../../../services/cat-name-service.service';
   templateUrl: './search-results.component.html',
   styleUrl: './search-results.component.scss',
 })
-export class SearchResultsComponent {
+export class SearchResultsComponent implements OnInit {
   searchResults: any[] = [];
 
   constructor(

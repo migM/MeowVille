@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { CatNameService } from '../../../services/cat-name-service.service';
 import { Location } from '@angular/common';
@@ -11,7 +11,7 @@ import { first } from 'rxjs';
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.scss',
 })
-export class DetailsPageComponent {
+export class DetailsPageComponent implements OnInit {
   public details = {
     name: '',
     description: '',
