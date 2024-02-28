@@ -52,7 +52,7 @@ export class CatCarouselComponent {
   seeCatDetails(catName: string): void {
     if (catName.trim() !== '') {
       this.catNameService.setCatName(catName);
-      this.router.navigate(['/details']);
+      this.router.navigate(['/details'], {queryParams: {catName: catName}});
     }
   }
 }

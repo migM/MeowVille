@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 }
 
 
@@ -35,12 +36,6 @@
   width: 100%;
   height: auto;
   padding-bottom: 20%;
-
-  // max-width: 60%;
-  // margin: 0 auto !important; 
-  // max-width: calc(100% - 60%) !important;
-  // max-height: calc(100% - 200px) !important;
-
 }
 
 .breed-name {
