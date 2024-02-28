@@ -10,15 +10,26 @@ To run this application and have access to all the code that makes it work, we n
 - Visual Studio Code - Download here: ('https://code.visualstudio.com/download') 
 > so you can mess around with the code
 
-## Once you have these, open a command line in the desired path on your machine and copy the following command to your command line: `git clone https://github.com/migM/MeowVille`
+## Once you have these, open a command line in the desired path on your machine and copy the following command to your command line: 
 
-## > Inside your new directory, make sure to navigate to /src/ `cd .\MeowVille\src\` ...
+`git clone https://github.com/migM/MeowVille`
 
-## > ... and run the command `npm install` to get all the dependencies for the project to run as it should.
+## > Inside your new directory, make sure to navigate to /src/ ...
 
-## > After the command finishes running and all packages are installed simply run the command `ng serve`
+`cd .\MeowVille\src\` 
 
-## ... and open your browser on:
+## > ... and run the command 
+
+`npm install` 
+
+## to get all the dependencies for the project to run as it should.
+
+## > After the command finishes running and all packages are installed simply run the command 
+
+`ng serve`
+
+## > ... and open your browser on:
+
 `http://localhost:4200`
 
 ## After that, interact with the page and it should be self-explanatory from there!
