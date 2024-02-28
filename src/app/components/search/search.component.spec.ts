@@ -6,7 +6,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'; // Impor
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('SearchComponent', () => {
+describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
   let searchService: SearchService;
