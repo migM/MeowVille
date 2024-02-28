@@ -28,20 +28,24 @@ export class SearchService {
             );
             if (this.searchResults.length === 0) {
               this.router.navigate(['']);
+            } else {
+              // Set search results and navigate to the results page
+              this.setSearchResults(this.searchResults);
+              this.router.navigate(['/results']);
             }
-            // Set search results and navigate to the results page
-            this.setSearchResults(this.searchResults);
-            this.router.navigate(['/results']);
             // Return the search results
             return of(this.searchResults);
           }
         })
       );
     } else {
-      // Return an empty array if searchQuery is empty
+      // Navigate to home page if searchQuery is empty
+      this.router.navigate(['']);
+      // Return an empty array
       return of([]);
     }
   }
+  
 
   //getters and setters for communication between search component and results component
   setSearchResults(results: any[]) {
