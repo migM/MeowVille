@@ -66,10 +66,10 @@
   text-align: left;
   margin-right: 6px;
   margin-bottom: 15px;
-
-  display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .carousel-inner {
