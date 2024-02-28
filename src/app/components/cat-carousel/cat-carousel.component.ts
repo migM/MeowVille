@@ -16,7 +16,7 @@ export class CatCarouselComponent implements OnInit {
     private catAPIService: CatAPIService,
     private router: Router,
     private catNameService: CatNameService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getCatsForSpinner(50, 5);
@@ -26,10 +26,14 @@ export class CatCarouselComponent implements OnInit {
   getCatsForSpinner(limit: number, numberOfEntries: number): void {
     this.catAPIService.getCats(limit).subscribe((data: any[]) => {
       const catsWithInformation = data.filter(cat => this.catHasAllInformation(cat));
-      for(let i = 0; i < numberOfEntries; i++) {
+      for (let i = 0; i < numberOfEntries; i++) {
+
+        // from the number of entries, we get an index of cats we will use to populate the carousel
         const randomIndex = Math.floor(Math.random() * data.length);
         const randomEntry = catsWithInformation[randomIndex];
-        if(randomEntry) {
+
+        // builds the object to be sent to the carousel
+        if (randomEntry) {
           this.details.push({
             name: randomEntry.name,
             description: randomEntry.description,
@@ -40,15 +44,16 @@ export class CatCarouselComponent implements OnInit {
     });
   }
 
+  // returns all info the cat provides relevant to the carousel 
   private catHasAllInformation(cat: any) {
     return !!cat && !!cat.name && !!cat.description && !!cat.image && !!cat.image.url;
   }
-  
+
   //opens details page with relevant cat selected
   seeCatDetails(catName: string): void {
     if (catName.trim() !== '') {
       this.catNameService.setCatName(catName);
-      this.router.navigate(['/details'], {queryParams: {catName: catName}});
+      this.router.navigate(['/details'], { queryParams: { catName: catName } });
     }
   }
 }
