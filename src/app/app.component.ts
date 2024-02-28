@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,13 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'MeowVille';
 
-  constructor(private readonly router: Router){}
+  constructor(private readonly router: Router, private readonly _location: Location){}
 
   public displayBackButton () {
     return !this.router.url.includes('home');
   }
 
   public backClicked () {
-    if(this.router.url === '/details'){
-      this.router.navigate(['/results']);
-    } else {
-      this.router.navigate([''])
-    }
+    this._location.back();
   }
 }
