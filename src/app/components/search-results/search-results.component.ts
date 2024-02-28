@@ -19,12 +19,15 @@ export class SearchResultsComponent {
 
   ngOnInit() {
     this.searchResults = this.searchService.getSearchResults();
+    if(!this.searchResults) {
+      this.router.navigate(['']);
+    }
   }
 
   seeDetails(name: string) {
     if (name.trim() !== '') {
       this.catNameService.setCatName(name);
-      this.router.navigate(['/details']);
+      this.router.navigate(['/details'], {queryParams: {catName: name}});
     }
   }
 }

@@ -1,49 +1,40 @@
-<div
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  "
->
-  <div>
-    <mat-grid-list
-      class="horizontal-display"
-      cols="auto-fit"
-      rowHeight="auto"
-      gutterSize="16px"
-    >
-      <mat-grid-tile class="card-grid" *ngFor="let cat of searchResults">
-        <mat-card>
-          <mat-card-header class="header">
-            <img
-              class="cat-image"
-              mat-card-image
-              [src]="cat.image.url"
-              alt="Cat Image"
-            />
-            <div class="padding-card">
-              <div>
-                <mat-card-title
-                  ><b>{{ cat.name }}</b></mat-card-title
-                >
-              </div>
-              <mat-card-subtitle class="text-cutoff">{{
-                cat.description
-              }}</mat-card-subtitle>
+<div class="search-results-container">
+  <mat-grid-list
+    class="horizontal-display"
+    cols="auto-fit"
+    rowHeight="auto"
+    gutterSize="16px"
+  >
+    <mat-grid-tile class="card-grid" *ngFor="let cat of searchResults">
+      <mat-card>
+        <mat-card-header class="header">
+          <img
+            class="cat-image"
+            mat-card-image
+            [src]="cat.image.url"
+            alt="Cat Image"
+          />
+          <div class="padding-card">
+            <div>
+              <mat-card-title
+                ><b>{{ cat.name }}</b></mat-card-title
+              >
             </div>
-          </mat-card-header>
-          <mat-card-actions class="mat-card">
-            <button
-              (click)="seeDetails(cat.name)"
-              mat-button
-              class="button-details"
-            >
-              Details >>
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
+            <mat-card-subtitle class="text-cutoff">{{
+              cat.description
+            }}</mat-card-subtitle>
+          </div>
+        </mat-card-header>
+        <mat-card-actions class="mat-card">
+          <button
+            (click)="seeDetails(cat.name)"
+            mat-button
+            class="button-details"
+          >
+            Details >>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

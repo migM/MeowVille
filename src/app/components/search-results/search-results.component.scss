@@ -1,16 +1,9 @@
+
 @import "../../../shared-styles.scss";
 
-.search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px;
-}
-
-input {
-  padding: 10px;
-  margin-bottom: 10px;
+.search-results-container {
+  width: 100%;
+  margin: 36px;
 }
 
 button {
@@ -47,7 +40,20 @@ button:hover {
 
 .horizontal-display {
   display: flex;
+  overflow-x: scroll;
 }
+
+::ng-deep .horizontal-display::-webkit-scrollbar {
+  width: 6px;
+  scrollbar-width: 6px;
+}
+
+::ng-deep .horizontal-display::-webkit-scrollbar-thumb {
+  background-color: $darkpink;
+  border-radius: 4px;
+  width: 4px !important;
+}
+
 
 .cat-image {
   flex: 1;
