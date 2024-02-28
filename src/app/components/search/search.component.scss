@@ -37,13 +37,13 @@ button:hover {
 
 .hint {
   position: absolute;
-  bottom: -30px; 
+  bottom: 13px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.1);
   padding: 5px;
   border-radius: 5px;
-  animation: fadeInOut 5s ease-in-out forwards; /* Adjust duration to your preference */
+  animation: fadeInOut 5s ease-in-out forwards; 
   font-style: italic;
   color: grey;
 }

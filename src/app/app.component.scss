@@ -17,13 +17,15 @@ html, body {
   justify-content: center;
   align-items: center; 
   margin-top: 34px;
-  margin-bottom: 34px;
   position: relative;
+  height: 13%;
+
 }
 
 .header-img {
-  max-width: 33%;
-  height: auto;
+  max-width: 20%;
+  padding-bottom: 33px;
+
 }
 
 .content-container {
