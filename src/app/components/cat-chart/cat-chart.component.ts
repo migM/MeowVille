@@ -14,7 +14,6 @@ Chart.register(...registerables);
 export class CatChartComponent implements OnInit {
   constructor(
     private catAPIService: CatAPIService,
-    private catNameService: CatNameService,
     private route: ActivatedRoute,
   ) {}
 
