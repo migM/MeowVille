@@ -1,43 +1,36 @@
-<div style="padding-bottom: 10px">
-  <button mat-button (click)="goBack()"><- Back</button>
-</div>
-
-<div class="title-container">
-  <mat-card-title>
+<div class="details-container">
+  <div class="breed-information">
     <h1 class="breed-name">
       {{ details.name }}
     </h1>
-    <h3>
+    <h3 class="breed-description">
       {{ details.description }} This cat's temperament is usually described as:
       {{ details.temperament }}.
     </h3>
-  </mat-card-title>
-</div>
-
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-  </mat-card-header>
-  <div class="image-description-container">
-    <img class="card-image" mat-card-image [src]="details.image" />
   </div>
-  <mat-card-content class="info-card">
-    <p class="division-line">
-      <b>Origin:</b> <i> {{ details.origin }}</i>
-    </p>
-    <p class="division-line">
-      <b>Average weight:</b> <i> {{ details.weight }} kg</i>
-    </p>
-    <p class="division-line">
-      <b>Average lifespan:</b> <i> {{ details.life_span }} years </i>
-    </p>
-    <p class="division-line">
-      <b>Wikipedia: </b>
-      <a href="{{ details.wiki }}" target="_blank" rel="noopener noreferrer">
-        <i>{{ details.wiki }}</i>
-      </a>
-    </p>
+
+  <div class="breed-image bg-grey outline">
+    <img class="card-image" [src]="details.image" />
+    <mat-card-content class="info-card">
+      <p class="division-line">
+        <b>Origin:</b> <i> {{ details.origin }}</i>
+      </p>
+      <p class="division-line">
+        <b>Average weight:</b> <i> {{ details.weight }} kg</i>
+      </p>
+      <p class="division-line">
+        <b>Average lifespan:</b> <i> {{ details.life_span }} years </i>
+      </p>
+      <p class="division-line">
+        <b>Wikipedia: </b>
+        <a href="{{ details.wiki }}" target="_blank" rel="noopener noreferrer">
+          <span>{{details.name}}</span>
+        </a>
+      </p>
+    </mat-card-content>
+  </div>
+
+  <div class="breed-personality">
     <attribute-chart></attribute-chart>
-  </mat-card-content>
-  <mat-card-actions> </mat-card-actions>
-</mat-card>
+  </div>
+</div>

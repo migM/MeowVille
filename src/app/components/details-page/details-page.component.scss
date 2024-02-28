@@ -1,24 +1,39 @@
 @import "../../../shared-styles.scss";
 
-.example-card {
-  @extend .outline;
-  max-width: 400px;
+.details-container {
   display: flex;
-  flex-direction: column;
-  background-color: rgba(214, 214, 214, 0.193);
-  left: 40vw;
-  position: absolute;
+  width: 100%;
+  height: calc(100% - 44px);
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 36px 0 36px;
+  overflow-y: auto;
 }
 
-.image-description-container {
+.breed-information,
+.breed-image,
+.breed-personality {
+  width: 33%;
+  height: 100%;
+  margin: 16px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
+
+.bg-grey {
+  @extend .outline;
+
+  background-color: rgba(214, 214, 214, 0.193);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
 .card-image {
-  max-height: 611px;
-  max-width: 386px;
-  width: auto;
+  width: 100%;
+  height: auto;
   padding-bottom: 15px;
 }
 
@@ -30,20 +45,10 @@
 }
 
 .breed-name,
-.description {
+.breed-description {
   text-align: left;
 }
 
-.title-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-left: 10px;
-  max-width: 25%;
-  top: 34%;
-  position: absolute;
-  left: 6vw;
-}
 
 .division-line {
   border-bottom: 1px solid #565555;
@@ -51,24 +56,12 @@
 }
 
 .info-card {
-  max-width: 21vw;
-  max-height: 21vh;
+  width: 100%;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: $lightpink;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: $darkpink;
-}
 
 h3 {
   font-size: 1.25rem !important;
