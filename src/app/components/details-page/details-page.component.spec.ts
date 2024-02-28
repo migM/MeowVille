@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-fdescribe('DetailsPageComponent', () => {
+describe('DetailsPageComponent', () => {
   let component: DetailsPageComponent;
   let fixture: ComponentFixture<DetailsPageComponent>;
   let catAPIServiceStub: Partial<CatAPIService>;
