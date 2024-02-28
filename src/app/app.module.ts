@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { CarouselModule } from '@coreui/angular';
 import { HomeComponent } from './components/home/home.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomRouteReuseStrategy } from '../route-reuse-strategy';
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     FormsModule,
     CarouselModule,
   ],
-  providers: [
+  providers: [ { provide: RouteReuseStrategy, useClass: CustomRouteReuseStrategy },
     provideClientHydration()
   ],
   bootstrap: [AppComponent],
