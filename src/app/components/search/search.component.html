@@ -1,6 +1,9 @@
 <div class="search-container">
-  <input type="text" [(ngModel)]="searchQuery" placeholder="Search cat breed" />
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Search cat breed" (focus)="showHint = true" />
   <button (click)="search(searchQuery)">Search</button>
+  <div class="hint" *ngIf="showHint">
+    <i> Hint: Type "american" to see different cats from America </i>
+  </div>
 </div>
 
 <div class="no-results" *ngIf="noResults">

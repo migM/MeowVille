@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px;
+  position: relative;
 }
 
 input {
@@ -25,48 +26,6 @@ button:hover {
   background-color: $darkpink;
 }
 
-.card-grid {
-  max-width: 365px;
-  margin-right: 10px;
-  min-height: 530px;
-
-  @extend .outline;
-}
-
-.card-header {
-  max-width: 100px;
-  max-height: 100px;
-}
-
-.text-cutoff {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.horizontal-display {
-  display: flex;
-}
-
-.cat-image {
-  flex: 1;
-  width: 335px;
-  max-height: 300px;
-  height: 60%;
-
-  background-size: cover;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right;
-}
-
-.padding-card {
-  padding-bottom: 30px;
-  padding-top: 10px;
-}
-
 .no-results {
   font-size: 2em;
   color: $lightpink;
@@ -74,4 +33,24 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hint {
+  position: absolute;
+  bottom: -30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+  animation: fadeInOut 5s ease-in-out forwards; /* Adjust duration to your preference */
+  font-style: italic;
+  color: grey;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }

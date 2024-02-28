@@ -9,6 +9,7 @@ import { SearchService } from '../../../services/search-service.service';
 export class SearchComponent {
   public searchQuery: string = '';
   public noResults: boolean = false;
+  public showHint: boolean = false; 
 
   constructor(private searchService: SearchService) {}
 
