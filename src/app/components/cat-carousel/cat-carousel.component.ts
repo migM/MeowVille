@@ -25,27 +25,23 @@ export class CatCarouselComponent implements OnInit {
   //load cats for spinner randomly by getting a number of cats provided in the limit argument, and presents the number of entries with the latter argument
   getCatsForSpinner(limit: number, numberOfEntries: number): void {
     this.catAPIService.getCats(limit).subscribe((data: any[]) => {
-      let entriesAdded = 0;
-      while (entriesAdded < numberOfEntries) {
+      const catsWithInformation = data.filter(cat => this.catHasAllInformation(cat));
+      for(let i = 0; i < numberOfEntries; i++) {
         const randomIndex = Math.floor(Math.random() * data.length);
-        const randomEntry = data[randomIndex];
-
-        // Check if the required fields are present in the random entry
-        if (
-          randomEntry.name &&
-          randomEntry.description &&
-          randomEntry.image &&
-          randomEntry.image.url
-        ) {
+        const randomEntry = catsWithInformation[randomIndex];
+        if(randomEntry) {
           this.details.push({
             name: randomEntry.name,
             description: randomEntry.description,
             image: randomEntry.image.url,
-          });
-          entriesAdded++;
+          })
         }
       }
     });
+  }
+
+  private catHasAllInformation(cat: any) {
+    return !!cat && !!cat.name && !!cat.description && !!cat.image && !!cat.image.url;
   }
   
   //opens details page with relevant cat selected
