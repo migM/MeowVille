@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: $lightpink;
 }
 
@@ -24,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   padding-left: 4%;
 }
 
@@ -72,6 +74,3 @@
   -webkit-box-orient: vertical;
 }
 
-.carousel-inner {
-  margin-top: 2% !important;
-}

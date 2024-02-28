@@ -1,7 +1,7 @@
 .vertical-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 44px)
   }
   
   .home-container {
