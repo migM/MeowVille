@@ -1,6 +1,31 @@
 # MeowVille
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+To run this application and have access to all the code that makes it work, we need a few things off the bat:
+- GIT - Download here: ('https://git-scm.com/downloads')
+> so you have access to all of GIT's functionalities and are able to clone the project directly to your machine
+
+- Node.Js - Download here: ('https://nodejs.org/en/download')
+> so you can get the packages, build, test and development server tools
+
+- Visual Studio Code - Download here: ('https://code.visualstudio.com/download') 
+> so you can mess around with the code
+
+## Once you have these, open a command line in the desired path on your machine and copy the following command to your command line: `git clone https://github.com/migM/MeowVille`
+
+## > Inside your new directory, make sure to navigate to /src/ `cd .\MeowVille\src\` ...
+
+## > ... and run the command `npm install` to get all the dependencies for the project to run as it should.
+
+## > After the command finishes running and all packages are installed simply run the command `ng serve`
+
+## ... and open your browser on:
+`http://localhost:4200`
+
+## After that, interact with the page and it should be self-explanatory from there!
+
+#AUTOMATICALLY GENERATED INFO:
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0. Make sure your Node.Js version is ^18.13.0
 
 ## Development server
 
