@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../../../services/search-service.service';
 import { Router } from '@angular/router';
-import { CatNameServiceService } from '../../../services/cat-name-service.service';
+import { CatNameService } from '../../../services/cat-name-service.service';
 
 @Component({
   selector: 'app-search-results',
@@ -14,7 +14,7 @@ export class SearchResultsComponent {
   constructor(
     private searchService: SearchService,
     private router: Router,
-    private catNameService: CatNameServiceService
+    private catNameService: CatNameService
   ) {}
 
   ngOnInit() {

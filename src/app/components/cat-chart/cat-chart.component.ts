@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { CatAPIService } from '../../../services/cat-api.service';
-import { CatNameServiceService } from '../../../services/cat-name-service.service';
+import { CatNameService } from '../../../services/cat-name-service.service';
 
 Chart.register(...registerables);
 @Component({
@@ -12,7 +12,7 @@ Chart.register(...registerables);
 export class CatChartComponent {
   constructor(
     private catAPIService: CatAPIService,
-    private catNameService: CatNameServiceService
+    private catNameService: CatNameService
   ) {}
 
   public chart: any;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { Router } from '@angular/router';
-import { CatNameServiceService } from '../../../services/cat-name-service.service';
+import { CatNameService } from '../../../services/cat-name-service.service';
 
 @Component({
   selector: 'app-cat-carousel',
@@ -15,7 +15,7 @@ export class CatCarouselComponent {
   constructor(
     private catAPIService: CatAPIService,
     private router: Router,
-    private catNameService: CatNameServiceService
+    private catNameService: CatNameService
   ) {}
 
   ngOnInit(): void {

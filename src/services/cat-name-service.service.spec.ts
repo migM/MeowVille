@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CatNameServiceService } from './cat-name-service.service';
+import { CatNameService } from './cat-name-service.service';
 
 describe('CatNameServiceService', () => {
-  let service: CatNameServiceService;
+  let service: CatNameService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CatNameServiceService);
+    service = TestBed.inject(CatNameService);
   });
 
   it('should be created', () => {
