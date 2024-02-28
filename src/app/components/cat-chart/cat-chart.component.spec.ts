@@ -5,7 +5,7 @@ import { CatNameService } from '../../../services/cat-name-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-fdescribe('CatChartComponent', () => {
+describe('CatChartComponent', () => {
   let component: CatChartComponent;
   let fixture: ComponentFixture<CatChartComponent>;
   let catAPIServiceStub: Partial<CatAPIService>;
