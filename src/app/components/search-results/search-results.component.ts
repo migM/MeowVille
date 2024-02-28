@@ -19,7 +19,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     this.searchResults = this.searchService.getSearchResults();
-    if(!this.searchResults) {
+    if (!this.searchResults || this.searchResults.length === 0) {
       this.router.navigate(['']);
     }
   }
