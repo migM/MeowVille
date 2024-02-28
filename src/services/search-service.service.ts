@@ -20,6 +20,9 @@ export class SearchService {
           this.searchResults = data.filter(cat =>
             cat.name.toLowerCase().includes(searchQuery.toLowerCase())
           );
+          if(this.searchResults.length === 0) {
+            this.router.navigate(['']);
+          }
           this.setSearchResults(this.searchResults);
           this.router.navigate(['/results']);
         }

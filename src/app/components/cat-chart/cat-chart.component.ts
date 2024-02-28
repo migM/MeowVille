@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { CatAPIService } from '../../../services/cat-api.service';
 import { CatNameService } from '../../../services/cat-name-service.service';
+import { ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs';
 
 Chart.register(...registerables);
 @Component({
@@ -12,31 +14,34 @@ Chart.register(...registerables);
 export class CatChartComponent {
   constructor(
     private catAPIService: CatAPIService,
-    private catNameService: CatNameService
+    private catNameService: CatNameService,
+    private route: ActivatedRoute,
   ) {}
 
   public chart: any;
   public breed: string = '';
 
   ngOnInit(): void {
-    const catName = this.catNameService.getCatName();
-    if (catName) {
-      this.catAPIService.getCatByName(catName).subscribe((data: any[]) => {
-        const breedData = data[0];
-        this.breed = breedData.name;
+    this.route.queryParams.pipe(first()).subscribe((params: any) => {
+      const catName = params.catName
+      if (catName) {
+        this.catAPIService.getCatByName(catName).subscribe((data: any[]) => {
+          const breedData = data[0];
+          this.breed = breedData.name;
 
-        // Populate chartData with the required data
-        const chartData = [
-          breedData.affection_level,
-          breedData.dog_friendly,
-          breedData.child_friendly,
-          breedData.stranger_friendly,
-          breedData.vocalisation,
-          breedData.intelligence,
-        ];
-        this.createChart(chartData);
-      });
-    }
+          // Populate chartData with the required data
+          const chartData = [
+            breedData.affection_level,
+            breedData.dog_friendly,
+            breedData.child_friendly,
+            breedData.stranger_friendly,
+            breedData.vocalisation,
+            breedData.intelligence,
+          ];
+          this.createChart(chartData);
+        });
+      }
+    })
   }
 
   //builds chart to show cat stats provided in labels
