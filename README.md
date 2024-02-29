@@ -61,3 +61,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Further reading
+
+## This project was developed in a short time as an answer to a code challenge. 
+
+> Unlike the JokeChucker developed earlier, I decided to take a bit more time at the beginning developing a more concise idea on paper, looking up APIs that had more data to use and showcase, drawing up a sketch of what the app would look like and how it would work and what each screen would do. This led to a far more clear idea of the application, made breaking it up into its components faster and that much easier to develop and finding a theming structure around it all. 
+
+> I also improved test coverage and the implementation of services for fetching data from the API and sharing data between components (which was missing from the JokeChucker), since this time around it made more sense to have that given the more complex nature of the app's behaviour. I hope this works as a better showcase of my experience.
+
