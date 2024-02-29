@@ -1,8 +1,8 @@
 # MeowVille
 
-    |\__/,|   (`\
-  _.|o o  |_   ) )
--(((---(((----
+        |\__/,|   (`\
+      _.|o o  |_   ) )
+    -(((---(((----
 
 
 Yes, we love cats! Explore cat breeds and their personalities with this app!
