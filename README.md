@@ -1,5 +1,17 @@
 # MeowVille
 
+    |\__/,|   (`\
+  _.|o o  |_   ) )
+-(((---(((----
+
+
+Yes, we love cats! Explore cat breeds and their personalities with this app!
+In the home page, you can search for the breeds you want or explore a random breed in the carousel at the bottom of the home page.
+
+The cat results page will display the cats that have your provided input in their breed name. Clicking on them will show their details.
+
+The cat details page will give you a small description of the breed, along with a nice picture and a graphic with the chosen cat's personality.
+
 To run this application and have access to all the code that makes it work, we need a few things off the bat:
 - GIT - Download here: ('https://git-scm.com/downloads')
 > so you have access to all of GIT's functionalities and are able to clone the project directly to your machine
