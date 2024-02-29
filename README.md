@@ -1,10 +1,12 @@
 # MeowVille
 
-<tt> |\__/,|   (`\</tt>
-<tt> |_ _  |.--.) )</tt>
-<tt> ( T   )     /</tt>
-<tt>(((^_(((/(((_/</tt>
-
+.                   _ |\_
+.                   \` ..\
+.              __,.-" =__Y=
+.            ."        )
+.      _    /   ,    \/\_
+.     ((____|    )_-\ \_-`
+.    `-----'`-----` `--`
 
 Yes, we love cats! Explore cat breeds and their personalities with this app!
 In the home page, you can search for the breeds you want or explore a random breed in the carousel at the bottom of the home page.
