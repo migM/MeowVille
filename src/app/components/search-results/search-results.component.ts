@@ -24,6 +24,7 @@ export class SearchResultsComponent implements OnInit {
     }
   }
 
+  //opens details page to see cat stats and information
   seeDetails(name: string) {
     if (name.trim() !== '') {
       this.catNameService.setCatName(name);

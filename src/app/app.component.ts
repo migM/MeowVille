@@ -12,10 +12,12 @@ export class AppComponent {
 
   constructor(private readonly router: Router, private readonly _location: Location){}
 
+  //handles visibility for back button so it doesn't show on home route
   public displayBackButton () {
     return !this.router.url.includes('home');
   }
 
+  //handles back button clicked
   public backClicked () {
     this._location.back();
   }
