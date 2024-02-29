@@ -12,6 +12,7 @@ import { first } from 'rxjs';
   styleUrl: './details-page.component.scss',
 })
 export class DetailsPageComponent implements OnInit {
+
   public details = {
     name: '',
     description: '',
@@ -25,11 +26,11 @@ export class DetailsPageComponent implements OnInit {
 
   constructor(
     private catAPIService: CatAPIService,
-    private catNameService: CatNameService,
     private location: Location,
     private route: ActivatedRoute,
   ) { }
 
+  //when details page opens, make call to get cat details and stats
   ngOnInit(): void {
     this.route.queryParams.pipe(first()).subscribe((params: any) => {
       const catName = params.catName
@@ -51,6 +52,7 @@ export class DetailsPageComponent implements OnInit {
     })
   }
 
+  //returns to previous page
   goBack(): void {
     this.location.back();
   }

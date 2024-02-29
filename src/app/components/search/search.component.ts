@@ -9,13 +9,20 @@ import { SearchService } from '../../../services/search-service.service';
 export class SearchComponent {
   public searchQuery: string = '';
   public noResults: boolean = false;
-  public showHint: boolean = false; 
+  public showHint: boolean = false;
+  public errorMessage: string = ''; 
 
   constructor(private searchService: SearchService) {}
 
+  //call search service with user input
   search(searchQuery: string) {
-    this.searchService.search(searchQuery).subscribe((results: any[]) => {
-      this.noResults = results.length === 0;
-    });
+    try {
+      this.searchService.search(searchQuery).subscribe((results: any[]) => {
+        this.noResults = results.length === 0;
+      });
+    } catch (error) {
+      this.errorMessage = 'An error occurred while searching.';
+      console.error('Error occurred in search:', error);
+    }
   }
 }
