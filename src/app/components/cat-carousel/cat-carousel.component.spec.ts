@@ -49,13 +49,14 @@ describe('CatCarouselComponent', () => {
   });
 
   it('should load cats for spinner', () => {
-    component.getCatsForSpinner(50, 2);
-    expect(component.details.length).toEqual(7);
+    component.details = [];
+    component.ngOnInit();
+    expect(component.details.length).toEqual(5);
   });
 
   it('should set cat name and navigate to details page', () => {
     const setCatNameSpy = spyOn(catNameServiceStub, 'setCatName');
-    const routerSpy = spyOn(TestBed.inject(Router), 'navigate');
+    const routerSpy = spyOn(component['router'], 'navigate');
   
     component.seeCatDetails('Cat 1');
   
